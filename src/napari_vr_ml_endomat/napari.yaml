@@ -15,36 +15,33 @@ contributions:
     - id: napari-vr-ml-endomat.write_single_image
       python_name: napari_vr_ml_endomat._writer:write_single_image
       title: Save image data with VR ML Endomat
-    - id: napari-vr-ml-endomat.make_container_widget
-      python_name: napari_vr_ml_endomat:ImageThreshold
-      title: Make threshold Container widget
-    - id: napari-vr-ml-endomat.make_magic_widget
-      python_name: napari_vr_ml_endomat:threshold_magic_widget
-      title: Make threshold magic widget
-    - id: napari-vr-ml-endomat.make_function_widget
-      python_name: napari_vr_ml_endomat:threshold_autogenerate_widget
-      title: Make threshold function widget
-    - id: napari-vr-ml-endomat.make_qwidget
-      python_name: napari_vr_ml_endomat:ExampleQWidget
-      title: Make example QWidget
+    - id: napari-vr-ml-endomat.endomat_widget
+      python_name: napari_vr_ml_endomat:VRMLEndoMat
+      title: VR Endomat Widget
+    - id: napari-vr-ml-endomat.train_widget
+      python_name: napari_vr_ml_endomat:TrainWidget
+      title: Train Widget
+    - id: napari-vr-ml-endomat.inference_widget
+      python_name: napari_vr_ml_endomat:InferenceWidget
+      title: Inference Widget
+    
   readers:
     - command: napari-vr-ml-endomat.get_reader
       accepts_directories: false
-      filename_patterns: ['*.npy']
+      filename_patterns: ['*.syg']
   writers:
     - command: napari-vr-ml-endomat.write_multiple
       layer_types: ['image*','labels*']
-      filename_extensions: []
+      filename_extensions: ['.syg']
     - command: napari-vr-ml-endomat.write_single_image
       layer_types: ['image']
-      filename_extensions: ['.npy']
+      filename_extensions: ['.syg']
   widgets:
-    - command: napari-vr-ml-endomat.make_container_widget
-      display_name: Container Threshold
-    - command: napari-vr-ml-endomat.make_magic_widget
-      display_name: Magic Threshold
-    - command: napari-vr-ml-endomat.make_function_widget
-      autogenerate: true
-      display_name: Autogenerate Threshold
-    - command: napari-vr-ml-endomat.make_qwidget
-      display_name: Example QWidget
+    - command: napari-vr-ml-endomat.endomat_widget
+      display_name: VR Endomat Widget
+    - command: napari-vr-ml-endomat.train_widget
+      display_name: Train Widget
+    - command: napari-vr-ml-endomat.inference_widget
+      display_name: Inference Widget
+    
+
